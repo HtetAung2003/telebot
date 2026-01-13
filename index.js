@@ -42,13 +42,23 @@ app.post('/webhook', async (req, res) => {
             });
         }
 
-        // Handle game buttons
         else if (callbackData === 'games') {
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
                 chat_id: callbackChatId,
-                text: "🎮 MLBB & HOK items:\n- Item 1\n- Item 2"
+                text: "🎮 Please choose a game",
+                reply_markup: {
+                    keyboard: [
+                        ["MLBB", "HOK"],
+                        ["PUBG", "Free Fire"],
+                        ["⬅ Back"]
+                    ],
+                    resize_keyboard: true,
+                    one_time_keyboard: false
+                }
             });
-        } else if (callbackData === 'qanda') {
+        }
+
+        else if (callbackData === 'qanda') {
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
                 chat_id: callbackChatId,
                 text: "🎮 PUBG UC & Free Fire items:\n- UC Pack\n- Free Fire Coins"
@@ -70,9 +80,10 @@ app.post('/webhook', async (req, res) => {
         const text = req.body.message.text;
 
         if (text === '/start') {
-            await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            await axios.post(`${TELEGRAM_API}/sendPhoto`, {
                 chat_id: chatId,
-                text: `မင်္ဂလာပါရှင်! Gamer ကြီးတိုရေ... 👋
+                photo: "https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp", // 👈 public image URL
+                caption: `မင်္ဂလာပါရှင်! Gamer ကြီးတိုရေ... 👋
 LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိုဆိုပါတယ်။`,
                 reply_markup: {
                     inline_keyboard: [
