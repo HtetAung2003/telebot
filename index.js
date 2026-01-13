@@ -29,28 +29,26 @@ app.post('/webhook', async (req, res) => {
         if (callbackData === 'start_button') {
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
                 chat_id: callbackChatId,
-                text: "Please choose a game 🎮",
+                text: "Please Select your service!",
                 reply_markup: {
                     inline_keyboard: [
-                        [{ text: "MLBB & HOK", callback_data: "mlbb_hok" }],
-                        [{ text: "PUBG UC & Free Fire", callback_data: "pubg_freefire" }],
-                        [{ text: "Sky: Children of the Light", callback_data: "sky" }],
-                        [{ text: "Where Winds Meet & MCGG", callback_data: "mcgg" }],
-                        [{ text: "Game 5", callback_data: "game5" }],
-                        [{ text: "Game 6", callback_data: "game6" }],
-                        [{ text: "Game 7", callback_data: "game7" }]
+                        [{ text: "Games", callback_data: "games" }],
+                        [{ text: "Question and Answer", callback_data: "qanda" }],
+                        [{ text: "Order", callback_data: "order" }],
+                        [{ text: "Latest News", callback_data: "lat_news" }],
+
                     ]
                 }
             });
         }
 
         // Handle game buttons
-        else if (callbackData === 'mlbb_hok') {
+        else if (callbackData === 'games') {
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
                 chat_id: callbackChatId,
                 text: "🎮 MLBB & HOK items:\n- Item 1\n- Item 2"
             });
-        } else if (callbackData === 'pubg_freefire') {
+        } else if (callbackData === 'qanda') {
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
                 chat_id: callbackChatId,
                 text: "🎮 PUBG UC & Free Fire items:\n- UC Pack\n- Free Fire Coins"
