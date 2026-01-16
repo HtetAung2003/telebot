@@ -10,7 +10,7 @@ app.use(express.json());
 // Telegram configuration
 const TELEGRAM_TOKEN = '8108896142:AAEO4138dMkokqTqDUIYxnUOmSwyrPkgmGI';
 const TELEGRAM_API = `https://api.telegram.org/bot${TELEGRAM_TOKEN}`;
-const ADMIN_CHAT_ID = '6997443698'; // Found in /test route
+const ADMIN_CHAT_ID = '5827436556'; // Found in /test route
 
 // In-memory state management
 const userStates = {};
@@ -358,8 +358,8 @@ app.post('/webhook', async (req, res) => {
                     chat_id: callbackChatId,
                     text: `🛒 **ရွေးချယ်ထားသော Package:** ${pkgLabel}
 
-ကျေးဇူးပြု၍ **Game ID (Server ID ပါ)** ကို ပေးပို့ပါရှင် ✨
-(ဥပမာ - 12345678 (1234))`,
+                            ကျေးဇူးပြု၍ **Game ID (Server ID ပါ) နှင့် username ** ကို ပေးပို့ပါရှင် ✨
+                                (ဥပမာ - 12345678 (1234) - hlahla)`,
                     parse_mode: "Markdown"
                 });
             }
