@@ -74,7 +74,14 @@ app.post('/webhook', async (req, res) => {
                 await axios.post(`${TELEGRAM_API}/sendMessage`, {
                     chat_id: callbackChatId,
                     text: `💎 **Double Diamond ဈေးနှုန်းများ** 💎
-                
+                    တစ်နှစ်မှတစ်ခါရမယ့် Double Bonus ဈေးနှုန်းလေးတွေ လာပါပြီရှင့်! 💎✨
+                    📋 Price List:
+                        🌟 50 + 50 Bonus = 4,000 Ks 
+🌟 150 + 150 Bonus = 10,000 Ks 
+🌟 250 + 250 Bonus = 16,000 Ks 
+🌟 500 + 500 Bonus = 35,000 Ks
+2ဆ ကတစ်ကြိမ်ဘဲရပါမယ်ရှင်!
+
                         ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
                     parse_mode: "Markdown",
                     reply_markup: {
@@ -85,11 +92,43 @@ app.post('/webhook', async (req, res) => {
                             [{ text: "🌟 Dia 500+500 - 35000 Ks", callback_data: "pkg_500_500" }],
                             [{ text: "💎 Double Diamond ဆိုတာဘာလဲ?", callback_data: "dd_what" }],
                             [{ text: "🧭 Double Diamond ရယူနည်း (Step-by-Step)", callback_data: "dd_steps" }],
-                            [{ text: "📅 Event က ဘယ်အချိန်ထိရှိလဲ?", callback_data: "dd_duration" }],
-                            [{ text: "⚡ Bonus Diamond ချက်ချင်းရလား?", callback_data: "dd_instant" }],
-                            [{ text: "👤 ဘယ် Account တွေအတွက်ရလဲ?", callback_data: "dd_account" }],
-                            [{ text: "🔁 တစ်နေ့တစ်ခါပဲရလား?", callback_data: "dd_limit" }],
-                            [{ text: "🔐 Account Ban ဖြစ်နိုင်လား?", callback_data: "dd_safe" }],
+                            // [{ text: "📅 Event က ဘယ်အချိန်ထိရှိလဲ?", callback_data: "dd_duration" }],
+                            // [{ text: "⚡ Bonus Diamond ချက်ချင်းရလား?", callback_data: "dd_instant" }],
+                            // [{ text: "👤 ဘယ် Account တွေအတွက်ရလဲ?", callback_data: "dd_account" }],
+                            // [{ text: "🔁 တစ်နေ့တစ်ခါပဲရလား?", callback_data: "dd_limit" }],
+                            // [{ text: "🔐 Account Ban ဖြစ်နိုင်လား?", callback_data: "dd_safe" }],
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
+            else if (callbackData === 'weekly_pass_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `ဈေးအသက်သာဆုံးနဲ့ Diamond အများဆုံးရမယ့် Weekly Pass လေးတွေ ရပါပြီရှင့်! 💎✨ 
+                            🎫 Price List:
+                            • 1 Weekly Pass = 6,000 Ks 
+                            • 2 Weekly Pass = 12,000 Ks (14 Days) 
+                            • 3 Weekly Pass = 18,000 Ks (21 Days) 
+                            • 4 Weekly Pass = 24,000 Ks (28 Days)
+                             • 5 Weekly Pass = 30,000 Ks (35 Days)
+                                💡 Why buy this? (ဘာလိုတန်လဲ): Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို COA, Starlight fragments, Rare fragment ,... တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉
+
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "1 Weekly Pass = 6000 Ks", callback_data: "pkg_1wp" }],
+                            [{ text: "2 Weekly Pass = 12000 Ks", callback_data: "pkg_2wp" }],
+                            [{ text: "3 Weekly Pass = 18000 Ks", callback_data: "pkg_3wp" }],
+                            [{ text: "4 Weekly Pass = 24000 Ks", callback_data: "pkg_4wp" }],
+                            [{ text: "5 Weekly Pass = 30000 Ks", callback_data: "pkg_5wp" }],
+                            [{ text: "🧭 Double Diamond ရယူနည်း (Step-by-Step)", callback_data: "dd_steps" }],
+                            // [{ text: "📅 Event က ဘယ်အချိန်ထိရှိလဲ?", callback_data: "dd_duration" }],
+                            // [{ text: "⚡ Bonus Diamond ချက်ချင်းရလား?", callback_data: "dd_instant" }],
+                            // [{ text: "👤 ဘယ် Account တွေအတွက်ရလဲ?", callback_data: "dd_account" }],
+                            // [{ text: "🔁 တစ်နေ့တစ်ခါပဲရလား?", callback_data: "dd_limit" }],
+                            // [{ text: "🔐 Account Ban ဖြစ်နိုင်လား?", callback_data: "dd_safe" }],
                             [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
                         ]
                     }
@@ -102,7 +141,12 @@ app.post('/webhook', async (req, res) => {
                     'pkg_50_50': 'Dia 50 + Bonus 50 (4000 Ks)',
                     'pkg_150_150': 'Dia 150 + Bonus 150 (10000 Ks)',
                     'pkg_250_250': 'Dia 250 + Bonus 250 (16000 Ks)',
-                    'pkg_500_500': 'Dia 500 + Bonus 500 (35000 Ks)'
+                    'pkg_500_500': 'Dia 500 + Bonus 500 (35000 Ks)',
+                    'pkg_1wp': '1 Weekly Pass',
+                    'pkg_2wp': '2 Weekly Pass',
+                    'pkg_3wp': '3 Weekly Pass',
+                    'pkg_4wp': '4 Weekly Pass',
+                    'pkg_5wp': '5 Weekly Pass',
                 }[callbackData];
 
                 userStates[callbackChatId] = {
