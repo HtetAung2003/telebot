@@ -123,43 +123,247 @@ app.post('/webhook', async (req, res) => {
                             [{ text: "3 Weekly Pass = 18000 Ks", callback_data: "pkg_3wp" }],
                             [{ text: "4 Weekly Pass = 24000 Ks", callback_data: "pkg_4wp" }],
                             [{ text: "5 Weekly Pass = 30000 Ks", callback_data: "pkg_5wp" }],
-                            [{ text: "🧭 Double Diamond ရယူနည်း (Step-by-Step)", callback_data: "dd_steps" }],
-                            // [{ text: "📅 Event က ဘယ်အချိန်ထိရှိလဲ?", callback_data: "dd_duration" }],
-                            // [{ text: "⚡ Bonus Diamond ချက်ချင်းရလား?", callback_data: "dd_instant" }],
-                            // [{ text: "👤 ဘယ် Account တွေအတွက်ရလဲ?", callback_data: "dd_account" }],
-                            // [{ text: "🔁 တစ်နေ့တစ်ခါပဲရလား?", callback_data: "dd_limit" }],
-                            // [{ text: "🔐 Account Ban ဖြစ်နိုင်လား?", callback_data: "dd_safe" }],
+
                             [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
                         ]
                     }
                 });
             }
+            else if (callbackData === 'latest_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: "ဒီနေ့အတွက် MLBB Diamond ဈေးနှုန်းလေးတွေပါရှင်! 💎✨ ...",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "Best Seller ", callback_data: "best_seller_diamond_price" }, { text: " < Less than 10000 Ks", callback_data: "small_dia_price" }],
+                            [{ text: "< less than 30000 Ks", callback_data: "medium_dia_price" }, { text: "🔹 Large Diamond ", callback_data: "large_dia_price" }],
+                            [{ text: "👑 Big Spenders  ", callback_data: "big_spen_price" }, { text: "⬅ နောက်သို့", callback_data: "back" }]
+                        ],
+                    }
+                });
+            }
+            else if (callbackData === 'best_seller_diamond_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `
+                            🔥 Best Sellers
+                            🎫 Price List:
+                            💎 86 Dia = 5,000 Ks 
+                            💎 172 Dia = 10,000 Ks
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "86 Dia = 5,000 Ks", callback_data: "pkg_86dia" }],
+                            [{ text: "172 Dia = 10,000 Ks", callback_data: "pkg_172dia" }],
 
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
+            else if (callbackData === 'small_dia_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `
+
+                          11 Dia = 1,000 Ks 
+                          22 Dia = 2,000 Ks 
+                          33 Dia = 3,000 Ks 
+                          44 Dia = 4,000 Ks
+                          86 Dia = 5,000 Ks
+                          172 Dia = 10,000 Ks
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: " 11 Dia = 1,000 Ks ", callback_data: "pkg_11dia" },
+                            { text: "22 Dia = 2,000 Ks ", callback_data: "pkg_22dia" }],
+                            [{ text: "33 Dia = 3,000 Ks ", callback_data: "pkg_33dia" },
+                            { text: "44 Dia = 4,000 Ks", callback_data: "pkg_44dia" }],
+                            [{ text: "86 Dia = 5,000 Ks", callback_data: "pkg_86dia" },
+                            { text: "172 Dia = 10,000 Ks", callback_data: "pkg_172dia" }],
+
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
+            else if (callbackData === 'medium_dia_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `
+
+                         257 Dia = 15,500 Ks ⚠️ (Note: Recharge 250 Mission မပြည့်ပါ)
+                         343 Dia = 20,000 Ks 
+                         429 Dia = 25,000 Ks
+                         514 Dia = 30,000 Ks ⚠️ (Note: Recharge 500 Mission မပြည့်ပါ)
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "257 Dia = 15,500 Ks", callback_data: "pkg_257dia" },
+                            { text: " 343 Dia = 20,000 Ks", callback_data: "pkg_343dia" }],
+                            [{ text: "429 Dia = 25,000 Ks", callback_data: "pkg_429dia" },
+                            { text: "514 Dia = 30,000 Ks", callback_data: "pkg_514dia" }],
+
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
+            else if (callbackData === 'large_dia_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `
+
+                        600 Dia = 35,000 Ks 
+                        706 Dia = 40,000 Ks 
+                        878 Dia = 55,000 Ks 
+                        1050 Dia = 60,000 Ks 
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: " 600 Dia = 35,000 Ks ", callback_data: "pkg_600dia" },
+                            { text: " 706 Dia = 40,000 Ks", callback_data: "pkg_706dia" }],
+                            [{ text: "878 Dia = 55,000 Ks", callback_data: "pkg_878dia" },
+                            { text: "1050 Dia = 60,000 Ks", callback_data: "pkg_1050dia" }],
+
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
+            else if (callbackData === 'big_spen_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `
+
+                         1135 Dia = 65,000 Ks 
+                         1220 Dia = 70,000 Ks 
+                         1412 Dia = 80,000 Ks 
+                         1584 Dia = 85,000 Ks 
+                         1842 Dia = 103,000 Ks 
+                         2195 Dia = 120,000 Ks 
+                         3688 Dia = 203,000 Ks
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "1135 Dia = 65,000 Ks  ", callback_data: "pkg_1135dia" },
+                            { text: "1220 Dia = 70,000 Ks ", callback_data: "pkg_1220dia" }],
+                            [{ text: "1412 Dia = 80,000 Ks", callback_data: "pkg_1412dia" },
+                            { text: "1584 Dia = 85,000 Ks", callback_data: "pkg_1584dia" }],
+                            [{ text: "1842 Dia = 103,000 Ks ", callback_data: "pkg_1842dia" },
+                            { text: "2195 Dia = 120,000 K", callback_data: "pkg_2195dia" }],
+                            [{ text: "3688 Dia = 203,000 Ks", callback_data: "pkg_3688dia" }],
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
+            else if (callbackData === 'twilight_pass_price') {
+                await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                    chat_id: callbackChatId,
+                    text: `
+                    Miya ရဲ့ Exclusive "Suzuhime" Skin ကို ချက်ချင်းလိုချင်ရင် Twilight Pass သာ ဝယ်လိုက်တော့နော်! 🏹💜 
+                    🏷 Price: ✨ Twilight Pass = 34,000 Ks
+
+                    🎁 ဘာတွေရမလဲ? 
+                    • 💎 200 Diamonds (Instant) 
+                    • 👗 Exclusive "Suzuhime" Skin (Permanent) 
+                    • 🎟 Tickets & Star Protection Card များစွာ!
+                    ဒီ Pass က ID တစ်ခုမှာ တစ်ကြိမ်ပဲ ဝယ်ယူခွင့်ရတဲ့ Special Offer မို မရှိသေးရင် ဝယ်ထားသင့်ပါတယ်ရှင့်! 😉
+
+                        ပြုလုပ်လိုသော Package ကို ရွေးချယ်ပေးပါရှင်... ✨`,
+                    parse_mode: "Markdown",
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: "Twilight Pass = 34,000 Ks", callback_data: "pkg_tlp" }],
+
+
+                            [{ text: "⬅ နောက်သို့", callback_data: "mlbb" }]
+                        ]
+                    }
+                });
+            }
             // Handle Package Selections
             else if (callbackData.startsWith('pkg_')) {
+
                 const pkgLabel = {
-                    'pkg_50_50': 'Dia 50 + Bonus 50 (4000 Ks)',
-                    'pkg_150_150': 'Dia 150 + Bonus 150 (10000 Ks)',
-                    'pkg_250_250': 'Dia 250 + Bonus 250 (16000 Ks)',
-                    'pkg_500_500': 'Dia 500 + Bonus 500 (35000 Ks)',
-                    'pkg_1wp': '1 Weekly Pass',
-                    'pkg_2wp': '2 Weekly Pass',
-                    'pkg_3wp': '3 Weekly Pass',
-                    'pkg_4wp': '4 Weekly Pass',
-                    'pkg_5wp': '5 Weekly Pass',
+                    // 🔹 Double Diamond
+                    pkg_50_50: 'Dia 50 + Bonus 50 (4,000 Ks)',
+                    pkg_150_150: 'Dia 150 + Bonus 150 (10,000 Ks)',
+                    pkg_250_250: 'Dia 250 + Bonus 250 (16,000 Ks)',
+                    pkg_500_500: 'Dia 500 + Bonus 500 (35,000 Ks)',
+
+                    // 🔹 Weekly Pass
+                    pkg_1wp: '1 Weekly Pass (6,000 Ks)',
+                    pkg_2wp: '2 Weekly Pass (12,000 Ks)',
+                    pkg_3wp: '3 Weekly Pass (18,000 Ks)',
+                    pkg_4wp: '4 Weekly Pass (24,000 Ks)',
+                    pkg_5wp: '5 Weekly Pass (30,000 Ks)',
+
+                    // 🔹 Small Diamond
+                    pkg_11dia: '11 Diamonds (1,000 Ks)',
+                    pkg_22dia: '22 Diamonds (2,000 Ks)',
+                    pkg_33dia: '33 Diamonds (3,000 Ks)',
+                    pkg_44dia: '44 Diamonds (4,000 Ks)',
+                    pkg_86dia: '86 Diamonds (5,000 Ks)',
+                    pkg_172dia: '172 Diamonds (10,000 Ks)',
+
+                    // 🔹 Medium Diamond
+                    pkg_257dia: '257 Diamonds (15,500 Ks)',
+                    pkg_343dia: '343 Diamonds (20,000 Ks)',
+                    pkg_429dia: '429 Diamonds (25,000 Ks)',
+                    pkg_514dia: '514 Diamonds (30,000 Ks)',
+
+                    // 🔹 Large Diamond
+                    pkg_600dia: '600 Diamonds (35,000 Ks)',
+                    pkg_706dia: '706 Diamonds (40,000 Ks)',
+                    pkg_878dia: '878 Diamonds (55,000 Ks)',
+                    pkg_1050dia: '1050 Diamonds (60,000 Ks)',
+
+                    // 🔹 Big Spenders
+                    pkg_1135dia: '1135 Diamonds (65,000 Ks)',
+                    pkg_1220dia: '1220 Diamonds (70,000 Ks)',
+                    pkg_1412dia: '1412 Diamonds (80,000 Ks)',
+                    pkg_1584dia: '1584 Diamonds (85,000 Ks)',
+                    pkg_1842dia: '1842 Diamonds (103,000 Ks)',
+                    pkg_2195dia: '2195 Diamonds (120,000 Ks)',
+                    pkg_3688dia: '3688 Diamonds (203,000 Ks)',
+
+                    // twilight pass
+                    pkg_tlp: 'Twilight Pass (34,000 Ks)'
                 }[callbackData];
 
+                // Safety check
+                if (!pkgLabel) {
+                    await axios.post(`${TELEGRAM_API}/sendMessage`, {
+                        chat_id: callbackChatId,
+                        text: "❌ Package မတွေ့ပါ။ ပြန်လည်ရွေးချယ်ပါရှင် 🙏"
+                    });
+                    return;
+                }
+
+                // Save user state
                 userStates[callbackChatId] = {
                     step: 'AWAITING_ID',
                     package: pkgLabel
                 };
 
+                // Ask for Game ID
                 await axios.post(`${TELEGRAM_API}/sendMessage`, {
                     chat_id: callbackChatId,
-                    text: `🛒 **ရွေးချယ်ထားသော Package:** ${pkgLabel}\n\nကျေးဇူးပြု၍ သင်၏ **Game ID** နှင့် **Server ID** ကို ရိုက်ပို့ပေးပါရှင်... ✨\n\n(ဥပမာ - 12345678 (1234))`,
+                    text: `🛒 **ရွေးချယ်ထားသော Package:** ${pkgLabel}
+
+ကျေးဇူးပြု၍ **Game ID (Server ID ပါ)** ကို ပေးပို့ပါရှင် ✨
+(ဥပမာ - 12345678 (1234))`,
                     parse_mode: "Markdown"
                 });
             }
+
 
             else if (callbackData === 'dd_what') {
                 await axios.post(`${TELEGRAM_API}/sendMessage`, {
