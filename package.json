@@ -3,9 +3,7 @@
     "axios": "^1.13.2",
     "cors": "^2.8.5",
     "express": "^5.2.1",
-    "node-telegram-bot-api": "^0.63.0",
-    "sequelize": "^6.37.7",
-    "sqlite3": "^5.1.7"
+    "node-telegram-bot-api": "^0.63.0"
   },
   "name": "pos-puzzle-bot",
   "version": "1.0.0",

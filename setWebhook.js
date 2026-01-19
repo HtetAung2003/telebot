@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const TELEGRAM_TOKEN = '8108896142:AAEO4138dMkokqTqDUIYxnUOmSwyrPkgmGI';
-const WEBHOOK_URL = 'https://impressed-benefits-cement-arabic.trycloudflare.com/webhook';
+const WEBHOOK_URL = 'https://has-ipod-treo-performing.trycloudflare.com/webhook';
 
 axios.post(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/setWebhook`, {
     url: WEBHOOK_URL
