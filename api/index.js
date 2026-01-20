@@ -2422,7 +2422,7 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
 
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
               chat_id: chatId,
-              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ!**\n\n👤 **Username:** ${playerInfo.name}\n🆔 **Player ID:** ${userId}\n📍 **Zone ID:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
+              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.name}\n🆔 **Player ID:** ${userId}\n📍 **Zone ID:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
               reply_markup: {
                 inline_keyboard: [
                   [
