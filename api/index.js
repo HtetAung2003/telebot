@@ -2188,7 +2188,7 @@ Double Diamond Event မှာ Diamonds ဝယ်ယူရင်
             __dirname,
             "..",
             "images",
-            "brandimage.png"
+            "brandimage.jpg"
           );
 
           if (fs.existsSync(photoPath)) {
