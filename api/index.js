@@ -1686,7 +1686,6 @@ const ADMIN_CHAT_ID = "5827436556"; // Found in /test route
 // In-memory state management
 const userStates = {};
 const orders = {}; // Track orders: { messageId: { customerChatId, orderDetails } }
-const axios = require("axios");
 
 async function checkMLBBId(userId, zoneId) {
   const options = {
