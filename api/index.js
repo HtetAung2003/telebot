@@ -1837,8 +1837,13 @@ app.post("/api/index", async (req, res) => {
           return;
         }
 
-        // Check if this is MLBB category (id 9 = MLBB Global, id 19 = MLBB Singapore)
-        const iMLBBCategory = pkg.categoryId === 9 || pkg.categoryId === 19;
+        // Check if this is MLBB category
+        // Find the category of this package
+        const pkgCategory = categories.find((c) => c.id === pkg.categoryId);
+        // Check if parent category is MLBB (9 = MLBB Global, 19 = MLBB Singapore)
+        const iMLBBCategory =
+          pkgCategory &&
+          (pkgCategory.parentId === 9 || pkgCategory.parentId === 19);
 
         // Save user state
         userStates[callbackChatId] = {
