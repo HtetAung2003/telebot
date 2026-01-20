@@ -2423,8 +2423,8 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
 
           // Call checkMLBBId function
           const playerInfo = await checkMLBBId(userId, zoneId);
-
-          if (playerInfo && playerInfo.username) {
+          console.log("playerInfo", playerInfo);
+          if (playerInfo) {
             // Successfully validated
             userStates[chatId].game_id = `${userId} (${zoneId})`;
             userStates[chatId].username = playerInfo.username;
