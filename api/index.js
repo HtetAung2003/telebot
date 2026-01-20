@@ -1700,7 +1700,9 @@ async function checkMLBBId(userId, zoneId) {
 
   try {
     const response = await axios.request(options);
+    console.log(response.data);
     return response.data; // Player ရဲ့ Username နဲ့ အခြား အချက်အလက်တွေ ပြန်လာပါမယ်
+
   } catch (error) {
     console.error(error);
     return null;
@@ -1838,12 +1840,16 @@ app.post("/api/index", async (req, res) => {
         }
 
         // Check if this is MLBB category
-        // Find the category of this package
-        const pkgCategory = categories.find((c) => c.id === pkg.categoryId);
-        // Check if parent category is MLBB (9 = MLBB Global, 19 = MLBB Singapore)
-        const iMLBBCategory =
-          pkgCategory &&
-          (pkgCategory.parentId === 9 || pkgCategory.parentId === 19);
+        // Check if this is MLBB category (recursive check for parent)
+        let iMLBBCategory = false;
+        let currentCat = categories.find((c) => c.id === pkg.categoryId);
+        while (currentCat) {
+          if (currentCat.id === 9 || currentCat.id === 19) {
+            iMLBBCategory = true;
+            break;
+          }
+          currentCat = categories.find((c) => c.id === currentCat.parentId);
+        }
 
         // Save user state
         userStates[callbackChatId] = {
@@ -1858,14 +1864,14 @@ app.post("/api/index", async (req, res) => {
             chat_id: callbackChatId,
             text: `🛒 **ရွေးချယ်ထားသော Package:** ${pkgLabel}
 
-ကျေးဇူးပြု၍ **MLBB Player ID နှင့် Zone ID** ကို ရွေးချယ်ပေးပါရှင် ✨
+ကျေးဇူးပြု၍ **MLBB Player ID နှင့် Server ID** ကို ရွေးချယ်ပေးပါရှင် ✨
 
-**Format:** \`PlayerId ZoneId\`
+**Format:** \`PlayerId Server ID\`
 (ဥပမာ - 12345678 1234)
 
-📌 **Zone ID တွေ:**
+📌 **Server ID တွေ:**
 - Global: 0000
-- Singapore: အခြား Zone ID`,
+- Singapore: အခြား Server ID`,
             parse_mode: "Markdown",
           });
         } else {
