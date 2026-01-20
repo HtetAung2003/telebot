@@ -2427,12 +2427,12 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
           if (playerInfo) {
             // Successfully validated
             userStates[chatId].game_id = `${userId} (${zoneId})`;
-            userStates[chatId].username = playerInfo.username;
+            userStates[chatId].username = playerInfo.data.username;
             userStates[chatId].step = "AWAITING_PAYMENT";
 
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
               chat_id: chatId,
-              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.username}\n🆔 **Player ID:** ${userId}\n📍 **Server:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
+              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.data.username}\n🆔 **Player ID:** ${userId}\n📍 **Server:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
               reply_markup: {
                 inline_keyboard: [
                   [
