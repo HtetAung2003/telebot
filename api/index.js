@@ -1691,7 +1691,7 @@ async function checkMLBBId(userId, zoneId) {
   const options = {
     method: "GET",
     url: "https://check-id-game3.p.rapidapi.com/game/check-region-mlbb", // နမူနာ API URL
-    params: { id: userId, zone: zoneId },
+    params: { id: userId, server: zoneId },
     headers: {
       "x-rapidapi-key": "d84fe63ab3msh603db4325488a65p1d2776jsn141eb708f983",
       "x-rapidapi-host": "check-id-game3.p.rapidapi.com",
@@ -2400,7 +2400,7 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
           if (parts.length < 2) {
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
               chat_id: chatId,
-              text: `❌ အကျုံးမဝင်သောပုံစံဖြစ်ပါတယ်။\n\nအဖြေသည် **Player ID နဲ့ Zone ID** ထည့်သွင်းရမည်ဖြစ်ပါတယ်။\n\n**Format:** \`PlayerId ZoneId\`\n(ဥပမာ - 12345678 1234)`,
+              text: `❌ အကျုံးမဝင်သောပုံစံဖြစ်ပါတယ်။\n\nအဖြေသည် **Player ID နဲ့ Server** ထည့်သွင်းရမည်ဖြစ်ပါတယ်။\n\n**Format:** \`PlayerId Server\`\n(ဥပမာ - 12345678 1234)`,
               parse_mode: "Markdown",
             });
             return;
@@ -2426,7 +2426,7 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
 
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
               chat_id: chatId,
-              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.name}\n🆔 **Player ID:** ${userId}\n📍 **Zone ID:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
+              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.name}\n🆔 **Player ID:** ${userId}\n📍 **Server:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
               reply_markup: {
                 inline_keyboard: [
                   [
