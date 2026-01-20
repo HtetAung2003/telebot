@@ -1690,11 +1690,11 @@ const orders = {}; // Track orders: { messageId: { customerChatId, orderDetails 
 async function checkMLBBId(userId, zoneId) {
   const options = {
     method: "GET",
-    url: "https://check-id-game3.p.rapidapi.com/game/check-region-mlbb", // နမူနာ API URL
+    url: "https://id-game-checker.p.rapidapi.com/mobile-legends/%7Bid%7D/%7Bserver%7D",
     params: { id: userId, server: zoneId },
     headers: {
       "x-rapidapi-key": "d84fe63ab3msh603db4325488a65p1d2776jsn141eb708f983",
-      "x-rapidapi-host": "check-id-game3.p.rapidapi.com",
+      "x-rapidapi-host": "id-game-checker.p.rapidapi.com",
     },
   };
 
