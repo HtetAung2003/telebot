@@ -1685,6 +1685,7 @@ const ADMIN_CHAT_ID = "5827436556"; // Found in /test route
 
 // In-memory state management
 const userStates = {};
+const orders = {}; // Track orders: { messageId: { customerChatId, orderDetails } }
 
 // Test route
 app.get("/", (req, res) => {
@@ -2073,6 +2074,51 @@ Double Diamond Event မှာ Diamonds ဝယ်ယူရင်
               e.response?.data || e.message
             )
           );
+      } else if (callbackData.startsWith("order_done_")) {
+        // Handle Admin marking order as done
+        const parts = callbackData.split("_");
+        const customerChatId = parts[2];
+        const userHandle = parts.slice(3).join("_");
+
+        // Send completion message to customer
+        const completionMessage = `✅ **Your Order is Done!** ✨
+
+Your order has been completed successfully! 🎉
+
+🎮 **Your service/game items are ready to use!**
+
+Please check your game account or service now.
+
+Thank you for your time and enjoy your life! 💝
+
+---
+Thank you for choosing LUNAR Gaming Shop! 🧡`;
+
+        try {
+          await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            chat_id: customerChatId,
+            text: completionMessage,
+            parse_mode: "Markdown",
+          });
+
+          // Send confirmation to admin
+          await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            chat_id: ADMIN_CHAT_ID,
+            text: `✅ **Order ပြီးသွားပြီ!**\n\n👤 **Customer:** @${userHandle}\n📨 **Notification sent successfully!**`,
+            parse_mode: "Markdown",
+          });
+        } catch (error) {
+          console.error(
+            "Error sending completion message:",
+            error.response?.data || error.message
+          );
+
+          // Send error notification to admin
+          await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            chat_id: ADMIN_CHAT_ID,
+            text: `❌ **Error:** Could not send message to customer. Please contact them directly.`,
+          });
+        }
       } else if (callbackData === "back") {
         await axios.post(`${TELEGRAM_API}/sendMessage`, {
           chat_id: callbackChatId,
@@ -2145,6 +2191,7 @@ Double Diamond Event မှာ Diamonds ဝယ်ယူရင်
 🆔 **Game ID:** ${state.game_id}
 💳 **Payment:** ${state.payment_method}
 ⏰ **Time:** ${orderTime}
+You will receive message from admin soon after done.
 ━━━━━━━━━━━━━━━━━━`;
 
           await axios.post(`${TELEGRAM_API}/sendMessage`, {
@@ -2155,11 +2202,34 @@ Double Diamond Event မှာ Diamonds ဝယ်ယူရင်
 
           // 2. Forward Order to Admin
           try {
-            // Send Text Details First
-            await axios.post(`${TELEGRAM_API}/sendMessage`, {
-              chat_id: ADMIN_CHAT_ID,
-              text: `🔔 **Order အသစ်ရောက်ရှိလာပါပြီ!** ✨\n\n👤 **Customer:** ${userHandle}\n📦 **Package:** ${state.package}\n🆔 **Game/Server ID:** ${state.game_id}\n💳 **Payment:** ${state.payment_method}`,
-            });
+            // Send Text Details First with Done Button
+            const adminMessageResponse = await axios.post(
+              `${TELEGRAM_API}/sendMessage`,
+              {
+                chat_id: ADMIN_CHAT_ID,
+                text: `🔔 **Order အသစ်ရောက်ရှိလာပါပြီ!** ✨\n\n👤 **Customer:** ${userHandle}\n📦 **Package:** ${state.package}\n🆔 **Game/Server ID:** ${state.game_id}\n💳 **Payment:** ${state.payment_method}`,
+                reply_markup: {
+                  inline_keyboard: [
+                    [
+                      {
+                        text: "✅ Done (ပြီးသွားပြီ)",
+                        callback_data: `order_done_${chatId}_${userHandle}`,
+                      },
+                    ],
+                  ],
+                },
+              }
+            );
+
+            // Store order information for later callback
+            const messageId = adminMessageResponse.data.result.message_id;
+            orders[messageId] = {
+              customerChatId: chatId,
+              customerHandle: userHandle,
+              package: state.package,
+              gameId: state.game_id,
+              paymentMethod: state.payment_method,
+            };
 
             // Send Screenshot
             await axios.post(`${TELEGRAM_API}/sendPhoto`, {
