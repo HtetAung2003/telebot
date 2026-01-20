@@ -1,7 +1,9 @@
 const express = require("express");
 const axios = require("axios");
 const cors = require("cors");
-
+const fs = require("fs");
+const FormData = require("form-data");
+const path = require("path");
 const app = express();
 const PORT = 3000;
 
@@ -2179,18 +2181,54 @@ Double Diamond Event မှာ Diamonds ဝယ်ယူရင်
       // Handle text messages
       else if (text) {
         if (text === "/start") {
-          await axios.post(`${TELEGRAM_API}/sendPhoto`, {
-            chat_id: chatId,
-            photo:
-              "https://static.vecteezy.com/vite/assets/photo-masthead-375-BoK_p8LG.webp", // 👈 public image URL
-            caption: `မင်္ဂလာပါရှင်! Gamer ကြီးတိုရေ... 👋
-LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိုဆိုပါတယ်။`,
-            reply_markup: {
-              inline_keyboard: [
-                [{ text: "Start", callback_data: "start_button" }],
-              ],
-            },
-          });
+          const chatId = req.body.message.chat.id;
+
+          // Path သတ်မှတ်ခြင်း (api folder ထဲကနေ အပြင်ထွက်၊ images ထဲဝင်၊ ss.png ကိုယူ)
+          const photoPath = path.join(
+            __dirname,
+            "..",
+            "images",
+            "brandimage.png"
+          );
+
+          if (fs.existsSync(photoPath)) {
+            const form = new FormData();
+            form.append("chat_id", chatId);
+
+            // Local file ကို stream အဖြစ် ထည့်ခြင်း
+            form.append("photo", fs.createReadStream(photoPath));
+
+            form.append(
+              "caption",
+              `မင်္ဂလာပါရှင်! Gamer ကြီးတိုရေ... 👋
+LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိုဆိုပါတယ်။`
+            );
+
+            form.append(
+              "reply_markup",
+              JSON.stringify({
+                inline_keyboard: [
+                  [{ text: "Start", callback_data: "start_button" }],
+                ],
+              })
+            );
+
+            try {
+              await axios.post(`${TELEGRAM_API}/sendPhoto`, form, {
+                headers: form.getHeaders(),
+              });
+            } catch (error) {
+              console.error(
+                "Photo ပို့စဉ် Error တက်သွားပါတယ်:",
+                error.response?.data || error.message
+              );
+            }
+          } else {
+            console.error(
+              "Photo file ရှာမတွေ့ပါ - path ကို ပြန်စစ်ပေးပါ:",
+              photoPath
+            );
+          }
         } else if (text === "ဘယ်လို ဝယ်ရမလဲ?") {
           await axios.post(`${TELEGRAM_API}/sendMessage`, {
             chat_id: chatId,
