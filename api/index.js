@@ -1701,7 +1701,7 @@ async function checkMLBBId(userId, zoneId) {
   try {
     const response = await axios.request(options);
     console.log(response.data);
-    return response.data; // Player ရဲ့ Username နဲ့ အခြား အချက်အလက်တွေ ပြန်လာပါမယ်
+    return response.data;
 
   } catch (error) {
     console.error(error);
@@ -2424,15 +2424,15 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
           // Call checkMLBBId function
           const playerInfo = await checkMLBBId(userId, zoneId);
 
-          if (playerInfo && playerInfo.name) {
+          if (playerInfo && playerInfo.username) {
             // Successfully validated
             userStates[chatId].game_id = `${userId} (${zoneId})`;
-            userStates[chatId].username = playerInfo.name;
+            userStates[chatId].username = playerInfo.username;
             userStates[chatId].step = "AWAITING_PAYMENT";
 
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
               chat_id: chatId,
-              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.name}\n🆔 **Player ID:** ${userId}\n📍 **Server:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
+              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.username}\n🆔 **Player ID:** ${userId}\n📍 **Server:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
               reply_markup: {
                 inline_keyboard: [
                   [
