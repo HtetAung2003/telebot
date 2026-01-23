@@ -99,7 +99,7 @@ const categories = [
 • 3 Weekly Pass = 18,600 Ks (21 Days) 
 • 4 Weekly Pass = 24,800 Ks (28 Days)
 • 5 Weekly Pass = 31,000 Ks (35 Days)
-💡 Why buy this? (ဘာလိုတန်လဲ): Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို COA, Starlight fragments, Rare fragment ,... တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉`,
+💡 Why buy this? (ဘယ်လိုတန်လဲ): Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို COA, Starlight fragments, Rare fragment , 20 Magic dust တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉`,
   },
   {
     id: 12,
@@ -454,7 +454,7 @@ const packages = [
   {
     id: 5,
     name: `1 Weekly Pass`,
-    price: `6,000 Ks`,
+    price: `6,200 Ks`,
     callbackData: `pkg_1wp`,
     categoryId: 11,
     description: null,
@@ -462,7 +462,7 @@ const packages = [
   {
     id: 6,
     name: `2 Weekly Pass`,
-    price: `12,000 Ks`,
+    price: `12,400 Ks`,
     callbackData: `pkg_2wp`,
     categoryId: 11,
     description: null,
@@ -470,7 +470,7 @@ const packages = [
   {
     id: 7,
     name: `3 Weekly Pass`,
-    price: `18,000 Ks`,
+    price: `18,600 Ks`,
     callbackData: `pkg_3wp`,
     categoryId: 11,
     description: null,
@@ -478,7 +478,7 @@ const packages = [
   {
     id: 8,
     name: `4 Weekly Pass`,
-    price: `24,000 Ks`,
+    price: `24,800 Ks`,
     callbackData: `pkg_4wp`,
     categoryId: 11,
     description: null,
@@ -486,7 +486,7 @@ const packages = [
   {
     id: 9,
     name: `5 Weekly Pass`,
-    price: `30,000 Ks`,
+    price: `31,000 Ks`,
     callbackData: `pkg_5wp`,
     categoryId: 11,
     description: null,
