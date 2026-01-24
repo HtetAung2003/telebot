@@ -1871,7 +1871,7 @@ app.post("/api/index", async (req, res) => {
             iMLBBCategory = true;
             break;
           }
-          else if (currentCat.id === 10 || currentCat.id === 20) {
+          else if (currentCat.id === 37) {
             isPubgCategory = true;
             break;
           }
