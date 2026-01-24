@@ -1709,6 +1709,26 @@ async function checkMLBBId(userId, zoneId) {
     console.error(error);
     return null;
   }
+} async function checkPubgId(userId) {
+  const options = {
+    method: "GET",
+    url: "https://id-game-checker.p.rapidapi.com/pubgm-global/",
+    params: { id: userId },
+    headers: {
+      "x-rapidapi-key": "d84fe63ab3msh603db4325488a65p1d2776jsn141eb708f983",
+      "x-rapidapi-host": "id-game-checker.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = await axios.request(options);
+    console.log(response.data);
+    return response.data;
+
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
 }
 // Test route
 app.get("/", (req, res) => {
@@ -1844,10 +1864,15 @@ app.post("/api/index", async (req, res) => {
         // Check if this is MLBB category
         // Check if this is MLBB category (recursive check for parent)
         let iMLBBCategory = false;
+        let isPubgCategory = false;
         let currentCat = categories.find((c) => c.id === pkg.categoryId);
         while (currentCat) {
           if (currentCat.id === 9 || currentCat.id === 19) {
             iMLBBCategory = true;
+            break;
+          }
+          else if (currentCat.id === 10 || currentCat.id === 20) {
+            isPubgCategory = true;
             break;
           }
           currentCat = categories.find((c) => c.id === currentCat.parentId);
@@ -1855,7 +1880,7 @@ app.post("/api/index", async (req, res) => {
 
         // Save user state
         userStates[callbackChatId] = {
-          step: iMLBBCategory ? "AWAITING_MLBB_ID" : "AWAITING_ID",
+          step: iMLBBCategory ? "AWAITING_MLBB_ID" : isPubgCategory ? "AWAITING_PUBG_ID" : "AWAITING_ID",
           package: pkgLabel,
           categoryId: pkg.categoryId,
         };
@@ -1874,6 +1899,19 @@ app.post("/api/index", async (req, res) => {
 📌 **Server ID တွေ:**
 - Global: 0000
 - Singapore: အခြား Server ID`,
+            parse_mode: "Markdown",
+          });
+        }
+        else if (isPubgCategory) {
+          await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            chat_id: callbackChatId,
+            text: `🛒 **ရွေးချယ်ထားသော Package:** ${pkgLabel}
+
+ကျေးဇူးပြု၍ **Pubg Player ID** ကို ရွေးချယ်ပေးပါရှင် ✨
+
+**Format:** \`PlayerId\`
+(ဥပမာ - 5204837417)
+`,
             parse_mode: "Markdown",
           });
         } else {
@@ -2435,6 +2473,65 @@ LUNAR Gaming Shop လေးကနေ နွေးထွေးစွာ ကြိ
             await axios.post(`${TELEGRAM_API}/sendMessage`, {
               chat_id: chatId,
               text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.data.username}\n🆔 **Player ID:** ${userId}\n📍 **Server:** ${zoneId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
+              reply_markup: {
+                inline_keyboard: [
+                  [
+                    { text: "KBZ Pay", callback_data: "pay_kbz" },
+                    { text: "Wave Pay", callback_data: "pay_wave" },
+                  ],
+                  [
+                    { text: "CB Pay", callback_data: "pay_cb" },
+                    { text: "AYA Pay", callback_data: "pay_aya" },
+                  ],
+                  [{ text: "uabpay", callback_data: "pay_uab" }],
+                ],
+              },
+            });
+          } else {
+            // Validation failed
+            await axios.post(`${TELEGRAM_API}/sendMessage`, {
+              chat_id: chatId,
+              text: `❌ **MLBB အီဒီ မတွေ့ရှိပါ။**\n\nPlayer ID သို့မဟုတ် Zone ID မှားနေသည်နိုင်ပါတယ်။\n\nကျေးဇူးပြု၍ ပြန်လည်ကြိုးစားပါ။ (ဥပမာ - 12345678 1234)`,
+              parse_mode: "Markdown",
+            });
+          }
+        }
+        else if (
+          userStates[chatId] &&
+          userStates[chatId].step === "AWAITING_PUBG_ID"
+        ) {
+          // Handle MLBB ID validation
+          const idZoneText = text.trim();
+
+          if (idZoneText.length > 10 && isNaN(idZoneText)) {
+            await axios.post(`${TELEGRAM_API}/sendMessage`, {
+              chat_id: chatId,
+              text: `❌ **Player ID** မှားယွင်းနေပါသည်။\n\nဂဏန်းများသာ ထည့်သွင်းပေးပါရန်။`,
+              parse_mode: "Markdown",
+            });
+            return;
+          }
+
+          const userId = idZoneText;
+
+          // Show loading message
+          await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            chat_id: chatId,
+            text: `⏳ Pubg ID စစ်ဆေးနေ ကျေးဇူးစောင့်ဆိုင်းပါ...`,
+          });
+
+          // Call checkMLBBId function
+          const playerInfo = await checkPubgId(userId);
+          console.log("playerInfo", playerInfo);
+          if (playerInfo) {
+            // Successfully validated
+            userStates[chatId].game_id = `${userId}`;
+            userStates[chatId].username = playerInfo.data.username;
+            userStates[chatId].step = "AWAITING_PAYMENT";
+
+            await axios.post(`${TELEGRAM_API}/sendMessage`, {
+              chat_id: chatId,
+              text: `✅ **Player အချက်အလက် အတည်ပြုပြီ! **\n\n👤 **Username:** ${playerInfo.data.username}\n🆔 **Player ID:** ${userId}\n\nငွေပေးချေလိုသော ပုံစံကို ရွေးချယ်ပေးပါရှင်... ✨`,
               reply_markup: {
                 inline_keyboard: [
                   [
