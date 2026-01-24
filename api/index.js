@@ -1928,6 +1928,23 @@ app.post("/api/index", async (req, res) => {
             parse_mode: "Markdown",
           });
         }
+        // Ask for Game ID - with MLBB specific format if needed
+        if (isMcggCategory) {
+          await axios.post(`${TELEGRAM_API}/sendMessage`, {
+            chat_id: callbackChatId,
+            text: `🛒 **ရွေးချယ်ထားသော Package:** ${pkgLabel}
+
+ကျေးဇူးပြု၍ **MLBB Magic Chess Go Go Player ID နှင့် Server ID** ကို ရွေးချယ်ပေးပါရှင် ✨
+
+**Format:** \`PlayerId Server ID\`
+(ဥပမာ - 12345678 1234)
+
+📌 **Server ID တွေ:**
+- Global: 0000
+- Singapore: အခြား Server ID`,
+            parse_mode: "Markdown",
+          });
+        }
         else if (isPubgCategory) {
           await axios.post(`${TELEGRAM_API}/sendMessage`, {
             chat_id: callbackChatId,
