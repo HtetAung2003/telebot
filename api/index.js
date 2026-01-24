@@ -1712,8 +1712,7 @@ async function checkMLBBId(userId, zoneId) {
 } async function checkPubgId(userId) {
   const options = {
     method: "GET",
-    url: "https://id-game-checker.p.rapidapi.com/pubgm-global/",
-    params: { id: userId },
+    url: `https://id-game-checker.p.rapidapi.com/pubgm-global/${userId}`,
     headers: {
       "x-rapidapi-key": "d84fe63ab3msh603db4325488a65p1d2776jsn141eb708f983",
       "x-rapidapi-host": "id-game-checker.p.rapidapi.com",
