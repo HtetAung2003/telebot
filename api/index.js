@@ -99,7 +99,12 @@ const categories = [
 • 3 Weekly Pass = 18,600 Ks (21 Days) 
 • 4 Weekly Pass = 24,800 Ks (28 Days)
 • 5 Weekly Pass = 31,000 Ks (35 Days)
-💡 Why buy this? (ဘယ်လိုတန်လဲ): Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို COA, Starlight fragments, Rare fragment , 20 Magic dust တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉`,
+💡 Why buy this? (ဘယ်လိုတန်လဲ)
+ Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို 
+ • COA
+ • Starlight fragments
+ • Rare fragment
+ • 20 Magic dust တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉`,
   },
   {
     id: 12,
@@ -109,8 +114,8 @@ const categories = [
 🏷 Price: ✨ Twilight Pass = 34,000 Ks
 
 🎁 ဘာတွေရမလဲ? 
-• 💎 200 Diamonds (Instant) 
 • 👗 Exclusive "Suzuhime" Skin (Permanent) 
+• 👗Eudora normal skin
 • 🎟 Tickets & Star Protection Card များစွာ!`,
   },
   {
