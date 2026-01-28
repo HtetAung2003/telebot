@@ -398,13 +398,19 @@ Battleground မှာ အမိုက်စား Skin တွေနဲ့ ရ�
     name: `Where Winds Meet`,
     parentId: 1,
     description: `⚔️ Where Winds Meet (Wuxia Open World) 🍂
-"သိုင်းလောကရဲ့ လေညင်းတွေဆုံရာ... ရာဇဝင်ထဲက Ten Kingdoms ခေတ်ဆီသို့..."
+“သိုင်းလောကရဲ့ လေညင်းတွေ ဆုံရာ…
+ရာဇဝင်ထဲက Ten Kingdoms ခေတ်ဆီ သိုင်းလမ်းခရီးစတင်လိုက်ပါ”
 
-ဓားသိုင်းပညာနဲ့ Open World ကို စိတ်ကြိုက်လေ့လာနိုင်မယ့် Where Winds Meet ဂိမ်းအတွက် ဝန်ဆောင်မှုများ ရရှိနိုင်ပါပြီရှင်! 🗡️✨
+Open World ကို လွတ်လပ်စွာ စူးစမ်းနိုင်မယ့်
+🔥 Where Winds Meet ဂိမ်းအတွက် ဝန်ဆောင်မှုများ ရရှိနိုင်ပါပြီ 🗡️✨
 
-🎐 Game Highlights: • ရုပ်ရှင်ဆန်တဲ့ Graphic တွေနဲ့ အမိုက်စား Wuxia Gameplay! • လွတ်လပ်တဲ့ "Wandering Swordsman" ဘဝကို ခံစားနိုင်မည်။
+🎐 Game Highlights
+• ရုပ်ရှင်ဆန်တဲ့ Graphic တွေနဲ့ အားလုံးကို မျက်စိမလွှတ်စေမယ့် Wuxia Gameplay
+• ကိုယ်စိတ်ကြိုက် လွတ်လပ်တဲ့ Wandering Swordsman ဘဝကို အပြည့်အဝ ခံစားနိုင်
 
-✅ Service Guarantee: Official Server မှ တိုက်ရိုက် ဝန်ဆောင်မှုပေးတာမို Account လုံခြုံမှုအတွက် (100%) အာမခံပါတယ်နော်။ 🧡`,
+✅ Service Guarantee
+Official Server မှ တိုက်ရိုက် ဝန်ဆောင်မှုပေးတာမို့
+🔐 Account လုံခြုံမှု 100% အာမခံ ပါတယ်နော် 💛`,
   },
   {
     id: 53,
