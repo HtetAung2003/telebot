@@ -67,6 +67,8 @@ const categories = [
 
 သို့မဟုတ် အောက်ပါ ဂိမ်းများမှ တိုက်ရိုက် ရွေးချယ်နိုင်ပါတယ် 👇`,
   },
+
+  //  mlbb global
   { id: 9, name: `MLBB Global`, parentId: 1, description: null },
   {
     id: 10,
@@ -185,6 +187,8 @@ Moonton Official က ခွင့်ပြုထားပြီးဖြစ်�
 2195 Dia = 120,000 Ks 
 3688 Dia = 203,000 Ks`,
   },
+
+  //  singapore  region ( mlbb)
   { id: 19, name: `MLBB 🇸🇬 Singapore`, parentId: 1, description: null },
   {
     id: 20,
@@ -208,12 +212,135 @@ Moonton Official က ခွင့်ပြုထားပြီးဖြစ်�
 • 4 Weekly Pass = 36,000 Ks (28 Days)
 • 5 Weekly Pass = 45,000 Ks (35 Days)`,
   },
+  {
+    id: 235,
+    name: `Weekly & Monthly bundle ဈေးနှုန်း`,
+    parentId: 19,
+    description: `💎 In-Game Purchase Packages (Official Top-Up) 💎
+အရင်က မဝယ်နိုင်ခဲ့တဲ့ Weekly / Monthly Packs တွေကို
+Moonton Official က ခွင့်ပြုထားပြီးဖြစ်လို
+👉 ID ပေးရုံနဲ့ တန်းထည့်လိုရပါပြီ 🔄
+🎁 Weekly Elite Bundle
+🌍 Foreign Server — 4500 Ks
+🎁 Monthly Epic Bundle
+🌍 Foreign Server — 21000 Ks
+📌 သတိထားရန်
+• Acc တစ်ခုကို Weekly – 1 ပတ် 1 ခါ
+• Acc တစ်ခုကို Monthly – 1 လ 1 ခါ သာ ထည့်လိုရပါတယ်။`,
+  },
   { id: 22, name: `💎 ပုံမှန် ဈေးနှုန်း`, parentId: 19, description: null },
+
   { id: 23, name: `Best Selected`, parentId: 22, description: null },
   { id: 24, name: `Small (< 10k)`, parentId: 22, description: null },
   { id: 25, name: `Medium (< 30k)`, parentId: 22, description: null },
   { id: 26, name: `Large`, parentId: 22, description: null },
   { id: 27, name: `Big Spenders`, parentId: 22, description: null },
+
+  // philippines region ( mlbb)
+  {
+    id: 221,
+    name: `MLBB 🇵🇭 Philippines`,
+    parentId: 1,
+    description: null,
+  },
+  {
+    id: 222,
+    name: `🎟️ Weekly Pass ဈေးနှုန်း`,
+    parentId: 221,
+    description: `💎 **Weekly Pass (PH)** 💎
+• 1 Weekly Pass = 6,500 Ks 
+• 2 Weekly Pass = 13,000 Ks (14 Days) 
+• 3 Weekly Pass = 19,500 Ks (21 Days) 
+• 4 Weekly Pass = 26,000 Ks (28 Days)
+• 5 Weekly Pass = 32,500 Ks (35 Days)`,
+  },
+  {
+    id: 236,
+    name: `Weekly & Monthly bundle ဈေးနှုန်း`,
+    parentId: 221,
+    description: `💎 In-Game Purchase Packages (Official Top-Up) 💎
+အရင်က မဝယ်နိုင်ခဲ့တဲ့ Weekly / Monthly Packs တွေကို
+Moonton Official က ခွင့်ပြုထားပြီးဖြစ်လို
+👉 ID ပေးရုံနဲ့ တန်းထည့်လိုရပါပြီ 🔄
+🎁 Weekly Elite Bundle
+🌍 Foreign Server — 4500 Ks
+🎁 Monthly Epic Bundle
+🌍 Foreign Server — 21000 Ks
+📌 သတိထားရန်
+• Acc တစ်ခုကို Weekly – 1 ပတ် 1 ခါ
+• Acc တစ်ခုကို Monthly – 1 လ 1 ခါ သာ ထည့်လိုရပါတယ်။`,
+  },
+  {
+    id: 225,
+    name: `🎟️ Twilight Pass ဈေးနှုန်း`,
+    parentId: 221,
+    description: `Miya ရဲ့ Exclusive "Suzuhime" Skin ကို ချက်ချင်းလိုချင်ရင် Twilight Pass သာ ဝယ်လိုက်တော့နော်! 🏹💜 
+🏷 Price: ✨ Twilight Pass = 35,200 Ks
+
+🎁 ဘာတွေရမလဲ? 
+• 👗 Exclusive "Suzuhime" Skin (Permanent) 
+• 👗Eudora normal skin
+• 🎟 Tickets & Star Protection Card များစွာ!`,
+  },
+  { id: 223, name: `💎 ပုံမှန် ဈေးနှုန်း`, parentId: 221, description: null },
+
+  { id: 224, name: `Best Selected`, parentId: 223, description: null },
+  { id: 225, name: `Small (< 10k)`, parentId: 223, description: null },
+  { id: 226, name: `Medium (< 30k)`, parentId: 223, description: null },
+  { id: 227, name: `Large`, parentId: 223, description: null },
+  {
+    id: 228,
+    name: `MLBB 🇮🇩 Indonesia Server`,
+    parentId: 1,
+    description: null,
+  },
+  {
+    id: 229,
+    name: `🎟️ Weekly Pass ဈေးနှုန်း`,
+    parentId: 228,
+    description: `💎 **Weekly Pass (ID)** 💎
+• 1 Weekly Pass = 7,250 Ks 
+• 2 Weekly Pass = 14,500 Ks (14 Days) 
+• 3 Weekly Pass = 21,750 Ks (21 Days) 
+• 4 Weekly Pass = 29,000 Ks (28 Days)
+• 5 Weekly Pass = 36,250 Ks (35 Days)`,
+  },
+  {
+    id: 226,
+    name: `🎟️ Twilight Pass ဈေးနှုန်း`,
+    parentId: 228,
+    description: `Miya ရဲ့ Exclusive "Suzuhime" Skin ကို ချက်ချင်းလိုချင်ရင် Twilight Pass သာ ဝယ်လိုက်တော့နော်! 🏹💜 
+🏷 Price: ✨ Twilight Pass = 37,250 Ks
+
+🎁 ဘာတွေရမလဲ? 
+• 👗 Exclusive "Suzuhime" Skin (Permanent) 
+• 👗Eudora normal skin
+• 🎟 Tickets & Star Protection Card များစွာ!`,
+  },
+  {
+    id: 237,
+    name: `Weekly & Monthly bundle ဈေးနှုန်း`,
+    parentId: 228,
+    description: `💎 In-Game Purchase Packages (Official Top-Up) 💎
+အရင်က မဝယ်နိုင်ခဲ့တဲ့ Weekly / Monthly Packs တွေကို
+Moonton Official က ခွင့်ပြုထားပြီးဖြစ်လို
+👉 ID ပေးရုံနဲ့ တန်းထည့်လိုရပါပြီ 🔄
+🎁 Weekly Elite Bundle
+🌍 Foreign Server — 4500 Ks
+🎁 Monthly Epic Bundle
+🌍 Foreign Server — 21000 Ks
+📌 သတိထားရန်
+• Acc တစ်ခုကို Weekly – 1 ပတ် 1 ခါ
+• Acc တစ်ခုကို Monthly – 1 လ 1 ခါ သာ ထည့်လိုရပါတယ်။`,
+  },
+  { id: 230, name: `💎 ပုံမှန် ဈေးနှုန်း`, parentId: 228, description: null },
+
+  { id: 231, name: `Best Selected`, parentId: 230, description: null },
+  { id: 232, name: `Small (< 10k)`, parentId: 230, description: null },
+  { id: 233, name: `Medium (< 30k)`, parentId: 230, description: null },
+  { id: 234, name: `Large`, parentId: 230, description: null },
+
+
   { id: 28, name: `Magic Chess : GoGo`, parentId: 1, description: null },
   {
     id: 29,
@@ -443,6 +570,7 @@ Official Server မှ တိုက်ရိုက် ဝန်ဆောင်�
 ];
 
 const packages = [
+  //  double diamond mlbb global
   {
     id: 1,
     name: `Dia 50 + 50`,
@@ -475,6 +603,7 @@ const packages = [
     categoryId: 10,
     description: null,
   },
+  // mlbb global weekly pass
   {
     id: 5,
     name: `1 Weekly Pass`,
@@ -515,6 +644,7 @@ const packages = [
     categoryId: 11,
     description: null,
   },
+  // mlbb global tiwlight pass
   {
     id: 10,
     name: `Twilight Pass`,
@@ -531,16 +661,18 @@ const packages = [
     categoryId: 14,
     description: null,
   },
+  // mlbb global weekly & monthly bundle
   {
     id: 111,
-    name: `Myanmar Server — 3500 Ks ( Weekly Elite Bundle )`,
+    name: `Weekly Elite Bundle`,
     price: `3500 Ks`,
     callbackData: `pkg_weekly_elite`,
     categoryId: 121,
     description: null,
-  }, {
+  },
+  {
     id: 112,
-    name: `Myanmar Server — 16500 Ks ( Monthly Epic Bundle )`,
+    name: `Monthly Epic Bundle`,
     price: `16500 Ks`,
     callbackData: `pkg_monthly_epic`,
     categoryId: 121,
@@ -722,6 +854,8 @@ const packages = [
     categoryId: 18,
     description: null,
   },
+
+  // mlbb sg double diamond
   {
     id: 34,
     name: `Dia 50+50`,
@@ -754,6 +888,7 @@ const packages = [
     categoryId: 20,
     description: null,
   },
+  // mlbb sg weekly pass
   {
     id: 38,
     name: `1 Weekly Pass`,
@@ -794,6 +929,158 @@ const packages = [
     categoryId: 21,
     description: null,
   },
+  // mlbb ph weekly pass
+  {
+    id: 431,
+    name: `1 Weekly Pass`,
+    price: `6,500 Ks `,
+    callbackData: `pkg_1wp_ph`,
+    categoryId: 222,
+    description: null,
+  },
+  {
+    id: 432,
+    name: `2 Weekly Pass`,
+    price: `13,000 Ks `,
+    callbackData: `pkg_2wp_ph`,
+    categoryId: 222,
+    description: null,
+  },
+  {
+    id: 433,
+    name: `3 Weekly Pass`,
+    price: `19,500 Ks`,
+    callbackData: `pkg_3wp_ph`,
+    categoryId: 222,
+    description: null,
+  },
+  {
+    id: 434,
+    name: `4 Weekly Pass`,
+    price: `26,000 Ks`,
+    callbackData: `pkg_4wp_ph`,
+    categoryId: 222,
+    description: null,
+  },
+  {
+    id: 435,
+    name: `5 Weekly Pass`,
+    price: `32,500 Ks`,
+    callbackData: `pkg_5wp_ph`,
+    categoryId: 222,
+    description: null,
+  },
+  //  mlbb indo weekly pass
+  {
+    id: 450,
+    name: `1 Weekly Pass`,
+    price: `7,250 Ks `,
+    callbackData: `pkg_1wp_id`,
+    categoryId: 229,
+    description: null,
+  },
+  {
+    id: 451,
+    name: `2 Weekly Pass`,
+    price: `14,500 Ks `,
+    callbackData: `pkg_2wp_id`,
+    categoryId: 229,
+    description: null,
+  },
+  {
+    id: 452,
+    name: `3 Weekly Pass`,
+    price: `21,750 Ks`,
+    callbackData: `pkg_3wp_id`,
+    categoryId: 229,
+    description: null,
+  },
+  {
+    id: 453,
+    name: `4 Weekly Pass`,
+    price: `29,000 Ks`,
+    callbackData: `pkg_4wp_id`,
+    categoryId: 229,
+    description: null,
+  },
+  {
+    id: 454,
+    name: `5 Weekly Pass`,
+    price: `36,250 Ks`,
+    callbackData: `pkg_5wp_id`,
+    categoryId: 229,
+    description: null,
+  },
+  //  twilight pass for id
+  {
+    id: 473,
+    name: `🎟️ Twilight Pass ဈေးနှုန်း`,
+    price: `37,250 Ks`,
+    callbackData: `pkg_twp_id`,
+    categoryId: 226,
+    description: null,
+  },
+  //  twilight pass for ph
+  {
+    id: 474,
+    name: `🎟️ Twilight Pass ဈေးနှုန်း`,
+    price: `35,200 Ks`,
+    callbackData: `pkg_twp_ph`,
+    categoryId: 225,
+    description: null,
+  },
+  //  weekly and monthly elite bundle for sg
+  {
+    id: 475,
+    name: `Weekly Elite Bundle`,
+    price: `4500 Ks`,
+    callbackData: `pkg_weekly_elite_sg`,
+    categoryId: 235,
+    description: null,
+  },
+  {
+    id: 476,
+    name: `Monthly Epic Bundle`,
+    price: `21,000 Ks`,
+    callbackData: `pkg_monthly_epic_sg`,
+    categoryId: 235,
+    description: null,
+  },
+  //  weekly and monthly elite bundle for ph
+  {
+    id: 477,
+    name: `Weekly Elite Bundle`,
+    price: `4500 Ks`,
+    callbackData: `pkg_weekly_elite_ph`,
+    categoryId: 236,
+    description: null,
+  },
+  {
+    id: 478,
+    name: `Monthly Epic Bundle`,
+    price: `21,000 Ks`,
+    callbackData: `pkg_monthly_epic_ph`,
+    categoryId: 236,
+    description: null,
+  },
+  //  weekly and monthly elite bundle for id
+  {
+    id: 479,
+    name: `Weekly Elite Bundle`,
+    price: `4500 Ks`,
+    callbackData: `pkg_weekly_elite_id`,
+    categoryId: 237,
+    description: null,
+  },
+  {
+    id: 480,
+    name: `Monthly Epic Bundle`,
+    price: `21,000 Ks`,
+    callbackData: `pkg_monthly_epic_id`,
+    categoryId: 237,
+    description: null,
+  },
+  // best seller for sg
   {
     id: 43,
     name: `70 Dia`,
@@ -818,6 +1105,57 @@ const packages = [
     categoryId: 23,
     description: null,
   },
+  // best seller for ph
+  {
+    id: 436,
+    name: `112 Dia`,
+    price: `8,000 Ks`,
+    callbackData: `pkg_112dia_ph`,
+    categoryId: 224,
+    description: null,
+  },
+  {
+    id: 437,
+    name: `56 Dia`,
+    price: `4,000 Ks`,
+    callbackData: `pkg_56dia_ph`,
+    categoryId: 224,
+    description: null,
+  },
+  {
+    id: 438,
+    name: `28 Dia`,
+    price: `2,300 Ks`,
+    callbackData: `pkg_28dia_ph`,
+    categoryId: 224,
+    description: null,
+  },
+  // best seller for id
+  {
+    id: 455,
+    name: `170 Dia`,
+    price: `11,450 Ks`,
+    callbackData: `pkg_170dia_id`,
+    categoryId: 231,
+    description: null,
+  },
+  {
+    id: 456,
+    name: `85 Dia`,
+    price: `5,750 Ks`,
+    callbackData: `pkg_85dia_id`,
+    categoryId: 231,
+    description: null,
+  },
+  {
+    id: 457,
+    name: `408 Dia`,
+    price: `27,300 Ks`,
+    callbackData: `pkg_408dia_id`,
+    categoryId: 231,
+    description: null,
+  },
+  // < 10000 sg dia
   {
     id: 46,
     name: `14 Dia`,
@@ -858,6 +1196,111 @@ const packages = [
     categoryId: 24,
     description: null,
   },
+  // < 10000 ph dia
+  {
+    id: 439,
+    name: `11 Dia`,
+    price: `8,00 Ks`,
+    callbackData: `pkg_11dia_ph`,
+    categoryId: 225,
+    description: null,
+  },
+  {
+    id: 440,
+    name: `22 Dia`,
+    price: `1,600 Ks`,
+    callbackData: `pkg_22dia_ph`,
+    categoryId: 225,
+    description: null,
+  },
+  {
+    id: 441,
+    name: `33 Dia`,
+    price: `2,400 Ks`,
+    callbackData: `pkg_33dia_ph`,
+    categoryId: 225,
+    description: null,
+  },
+  {
+    id: 442,
+    name: `44 Dia`,
+    price: `3,200 Ks`,
+    callbackData: `pkg_44dia_ph`,
+    categoryId: 225,
+    description: null,
+  }, {
+    id: 443,
+    name: `56 Dia`,
+    price: `4,000 Ks`,
+    callbackData: `pkg_56dia_ph`,
+    categoryId: 225,
+    description: null,
+  }, {
+    id: 444,
+    name: `112 Dia`,
+    price: `8,000 Ks`,
+    callbackData: `pkg_112dia_ph`,
+    categoryId: 225,
+    description: null,
+  },
+  // < 10000 id dia
+  {
+    id: 458,
+    name: `5 Dia`,
+    price: `5,000 Ks`,
+    callbackData: `pkg_5dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  {
+    id: 459,
+    name: `12 Dia`,
+    price: `9,00 Ks`,
+    callbackData: `pkg_12dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  {
+    id: 460,
+    name: `19 Dia`,
+    price: `1,400 Ks`,
+    callbackData: `pkg_19dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  {
+    id: 461,
+    name: `28 Dia`,
+    price: `2,000 Ks`,
+    callbackData: `pkg_28dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  {
+    id: 462,
+    name: `44 Dia`,
+    price: `3,050 Ks`,
+    callbackData: `pkg_44dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  {
+    id: 463,
+    name: `59 Dia`,
+    price: `4,000 Ks`,
+    callbackData: `pkg_59dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  {
+    id: 464,
+    name: `85 Dia`,
+    price: `5,750 Ks`,
+    callbackData: `pkg_85dia_id`,
+    categoryId: 232,
+    description: null,
+  },
+  // < 30000 sg dia
   {
     id: 51,
     name: `210 Dia`,
@@ -882,6 +1325,49 @@ const packages = [
     categoryId: 25,
     description: null,
   },
+  // < 30000 ph dia
+  {
+    id: 445,
+    name: `336 Dia`,
+    price: `24,000 Ks`,
+    callbackData: `pkg_336dia_ph`,
+    categoryId: 226,
+    description: null,
+  },
+  // < 30000 id dia
+  {
+    id: 465,
+    name: `170 Dia`,
+    price: `11,450 Ks`,
+    callbackData: `pkg_170dia_id`,
+    categoryId: 233,
+    description: null,
+  },
+  {
+    id: 466,
+    name: `240 Dia`,
+    price: `16,150 Ks`,
+    callbackData: `pkg_240dia_id`,
+    categoryId: 233,
+    description: null,
+  },
+  {
+    id: 467,
+    name: `296 Dia`,
+    price: `19,900 Ks`,
+    callbackData: `pkg_296dia_id`,
+    categoryId: 233,
+    description: null,
+  },
+  {
+    id: 468,
+    name: `408 Dia`,
+    price: `27,300 Ks`,
+    callbackData: `pkg_408dia_id`,
+    categoryId: 233,
+    description: null,
+  },
+  // < 60000 sg dia
   {
     id: 54,
     name: `429 Dia`,
@@ -914,6 +1400,73 @@ const packages = [
     categoryId: 26,
     description: null,
   },
+  // other ph dia 
+  {
+    id: 446,
+    name: `570 Dia`,
+    price: `40,000 Ks`,
+    callbackData: `pkg_570dia_ph`,
+    categoryId: 227,
+    description: null,
+  },
+  {
+    id: 447,
+    name: `1,163 Dia`,
+    price: `80,000 Ks`,
+    callbackData: `pkg_1163dia_ph`,
+    categoryId: 227,
+    description: null,
+  },
+  {
+    id: 448,
+    name: `2,398 Dia`,
+    price: `160,000 Ks`,
+    callbackData: `pkg_2398dia_ph`,
+    categoryId: 227,
+    description: null,
+  },
+  {
+    id: 449,
+    name: `6,042 Dia`,
+    price: `400,000 Ks`,
+    callbackData: `pkg_6042dia_ph`,
+    categoryId: 227,
+    description: null,
+  },
+  // other id dia 
+  {
+    id: 469,
+    name: `568 Dia`,
+    price: `37,200 Ks`,
+    callbackData: `pkg_568dia_id`,
+    categoryId: 234,
+    description: null,
+  },
+  {
+    id: 470,
+    name: `875 Dia`,
+    price: `57,100 Ks`,
+    callbackData: `pkg_875dia_id`,
+    categoryId: 234,
+    description: null,
+  },
+  {
+    id: 471,
+    name: `2,010 Dia`,
+    price: `124,000 Ks`,
+    callbackData: `pkg_2010dia_id`,
+    categoryId: 234,
+    description: null,
+  },
+  {
+    id: 472,
+    name: `4,830 Dia`,
+    price: `297,800 Ks`,
+    callbackData: `pkg_4830dia_id`,
+    categoryId: 234,
+    description: null,
+  },
+  // larger sg dia
   {
     id: 58,
     name: `870 Dia`,
