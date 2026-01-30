@@ -113,6 +113,23 @@ const categories = [
 • 🎟 Tickets & Star Protection Card များစွာ!`,
   },
   {
+    id: 121,
+    name: `Weekly & Monthly bundle ဈေးနှုန်း`,
+    parentId: 9,
+    description: `💎 In-Game Purchase Packages (Official Top-Up) 💎
+အရင်က မဝယ်နိုင်ခဲ့တဲ့ Weekly / Monthly Packs တွေကို
+Moonton Official က ခွင့်ပြုထားပြီးဖြစ်လို
+👉 ID ပေးရုံနဲ့ တန်းထည့်လိုရပါပြီ 🔄
+🎁 Weekly Elite Bundle
+🇲🇲 Myanmar Server — 3500 Ks
+🎁 Monthly Epic Bundle
+🇲🇲 Myanmar Server — 16500 Ks
+📌 သတိထားရန်
+• Acc တစ်ခုကို Weekly – 1 ပတ် 1 ခါ
+• Acc တစ်ခုကို Monthly – 1 လ 1 ခါ သာ ထည့်လိုရပါတယ်။`,
+  },
+
+  {
     id: 13,
     name: `💎 ပုံမှန် ဈေးနှုန်း (Latest)`,
     parentId: 9,
@@ -512,6 +529,21 @@ const packages = [
     price: `5,000 Ks`,
     callbackData: `pkg_86dia`,
     categoryId: 14,
+    description: null,
+  },
+  {
+    id: 111,
+    name: `Myanmar Server — 3500 Ks ( Weekly Elite Bundle )`,
+    price: `3500 Ks`,
+    callbackData: `pkg_weekly_elite`,
+    categoryId: 121,
+    description: null,
+  }, {
+    id: 112,
+    name: `Myanmar Server — 16500 Ks ( Monthly Epic Bundle )`,
+    price: `16500 Ks`,
+    callbackData: `pkg_monthly_epic`,
+    categoryId: 121,
     description: null,
   },
   {
