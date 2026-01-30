@@ -67,12 +67,6 @@ const categories = [
 
 သို့မဟုတ် အောက်ပါ ဂိမ်းများမှ တိုက်ရိုက် ရွေးချယ်နိုင်ပါတယ် 👇`,
   },
-  {
-    id: 8,
-    name: `📰 နောက်ဆုံးရသတင်း (Latest News)`,
-    parentId: null,
-    description: null,
-  },
   { id: 9, name: `MLBB Global`, parentId: 1, description: null },
   {
     id: 10,
@@ -99,7 +93,12 @@ const categories = [
 • 3 Weekly Pass = 18,600 Ks (21 Days) 
 • 4 Weekly Pass = 24,800 Ks (28 Days)
 • 5 Weekly Pass = 31,000 Ks (35 Days)
-💡 Why buy this? (ဘယ်လိုတန်လဲ): Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို COA, Starlight fragments, Rare fragment , 20 Magic dust တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉`,
+💡 Why buy this? (ဘယ်လိုတန်လဲ)
+ Weekly Pass တစ်ပတ်ဝယ်ရုံနဲ့ Total 220 Diamonds အပြင် 1 day ကို 
+ • COA
+ • Starlight fragments
+ • Rare fragment
+ • 20 Magic dust တွေပါဝင်တဲ့ 1 box ကို ရမှာနော်! အရမ်းတန်... 😉`,
   },
   {
     id: 12,
@@ -109,8 +108,8 @@ const categories = [
 🏷 Price: ✨ Twilight Pass = 34,000 Ks
 
 🎁 ဘာတွေရမလဲ? 
-• 💎 200 Diamonds (Instant) 
 • 👗 Exclusive "Suzuhime" Skin (Permanent) 
+• 👗Eudora normal skin
 • 🎟 Tickets & Star Protection Card များစွာ!`,
   },
   {
@@ -393,13 +392,19 @@ Battleground မှာ အမိုက်စား Skin တွေနဲ့ ရ�
     name: `Where Winds Meet`,
     parentId: 1,
     description: `⚔️ Where Winds Meet (Wuxia Open World) 🍂
-"သိုင်းလောကရဲ့ လေညင်းတွေဆုံရာ... ရာဇဝင်ထဲက Ten Kingdoms ခေတ်ဆီသို့..."
+“သိုင်းလောကရဲ့ လေညင်းတွေ ဆုံရာ…
+ရာဇဝင်ထဲက Ten Kingdoms ခေတ်ဆီ သိုင်းလမ်းခရီးစတင်လိုက်ပါ”
 
-ဓားသိုင်းပညာနဲ့ Open World ကို စိတ်ကြိုက်လေ့လာနိုင်မယ့် Where Winds Meet ဂိမ်းအတွက် ဝန်ဆောင်မှုများ ရရှိနိုင်ပါပြီရှင်! 🗡️✨
+Open World ကို လွတ်လပ်စွာ စူးစမ်းနိုင်မယ့်
+🔥 Where Winds Meet ဂိမ်းအတွက် ဝန်ဆောင်မှုများ ရရှိနိုင်ပါပြီ 🗡️✨
 
-🎐 Game Highlights: • ရုပ်ရှင်ဆန်တဲ့ Graphic တွေနဲ့ အမိုက်စား Wuxia Gameplay! • လွတ်လပ်တဲ့ "Wandering Swordsman" ဘဝကို ခံစားနိုင်မည်။
+🎐 Game Highlights
+• ရုပ်ရှင်ဆန်တဲ့ Graphic တွေနဲ့ အားလုံးကို မျက်စိမလွှတ်စေမယ့် Wuxia Gameplay
+• ကိုယ်စိတ်ကြိုက် လွတ်လပ်တဲ့ Wandering Swordsman ဘဝကို အပြည့်အဝ ခံစားနိုင်
 
-✅ Service Guarantee: Official Server မှ တိုက်ရိုက် ဝန်ဆောင်မှုပေးတာမို Account လုံခြုံမှုအတွက် (100%) အာမခံပါတယ်နော်။ 🧡`,
+✅ Service Guarantee
+Official Server မှ တိုက်ရိုက် ဝန်ဆောင်မှုပေးတာမို့
+🔐 Account လုံခြုံမှု 100% အာမခံ ပါတယ်နော် 💛`,
   },
   {
     id: 53,
