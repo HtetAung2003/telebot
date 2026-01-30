@@ -67,12 +67,6 @@ const categories = [
 
 သို့မဟုတ် အောက်ပါ ဂိမ်းများမှ တိုက်ရိုက် ရွေးချယ်နိုင်ပါတယ် 👇`,
   },
-  {
-    id: 8,
-    name: `📰 နောက်ဆုံးရသတင်း (Latest News)`,
-    parentId: null,
-    description: null,
-  },
   { id: 9, name: `MLBB Global`, parentId: 1, description: null },
   {
     id: 10,
